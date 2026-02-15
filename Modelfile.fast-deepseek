@@ -1,0 +1,19 @@
+# Fast DeepSeek Coder - Optimized for Autocomplete Speed
+FROM deepseek-coder:6.7b
+
+# System prompt for autocomplete
+SYSTEM You are a code completion assistant. Complete code accurately and quickly.
+
+# Speed-first parameters for autocomplete
+PARAMETER num_ctx 8192               # Smaller context for speed
+PARAMETER num_predict 256            # Short completions
+PARAMETER temperature 0.1            # Very deterministic
+PARAMETER top_p 0.95                 # High probability mass
+PARAMETER top_k 50                   # Slightly larger top-k
+PARAMETER repeat_penalty 1.05        # Light repetition penalty
+PARAMETER num_thread 16              # All threads
+PARAMETER num_gpu 1                  # GPU acceleration
+
+# Fast stop sequences
+PARAMETER stop "\n\n"
+PARAMETER stop "```"

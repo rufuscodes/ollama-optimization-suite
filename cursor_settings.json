@@ -1,0 +1,61 @@
+{
+  // Cursor AI Settings - Optimized for Ollama
+  
+  // Use Ollama for AI features
+  "cursor.ai.provider": "ollama",
+  "cursor.ai.baseURL": "http://127.0.0.1:11434",
+  
+  // Model selection
+  "cursor.ai.model": "codellama:13b",
+  "cursor.ai.chatModel": "llama3:latest",
+  "cursor.ai.embeddingModel": "nomic-embed-text",
+  
+  // Performance optimizations
+  "cursor.ai.maxTokens": 8192,
+  "cursor.ai.temperature": 0.2,
+  "cursor.ai.timeout": 30000,
+  "cursor.ai.streamResponse": true,
+  
+  // Context and completion settings
+  "cursor.ai.contextLength": 16384,
+  "cursor.ai.maxCompletionTokens": 2048,
+  
+  // Autocomplete optimization
+  "cursor.autocomplete.enabled": true,
+  "cursor.autocomplete.delay": 50,
+  "cursor.autocomplete.maxSuggestions": 3,
+  "cursor.autocomplete.useOllama": true,
+  "cursor.autocomplete.model": "deepseek-coder:6.7b",
+  
+  // Chat optimization
+  "cursor.chat.streaming": true,
+  "cursor.chat.maxMessages": 50,
+  "cursor.chat.contextLines": 100,
+  
+  // Agent mode optimization
+  "cursor.agent.enabled": true,
+  "cursor.agent.maxIterations": 10,
+  "cursor.agent.timeout": 60000,
+  "cursor.agent.useLocalModels": true,
+  
+  // Memory and caching
+  "cursor.cache.enabled": true,
+  "cursor.cache.embeddings": true,
+  
+  // Editor integration
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.tabCompletion": "on",
+  
+  // Performance
+  "cursor.performance.useWebWorkers": true,
+  "cursor.performance.preloadModels": true,
+  "cursor.telemetryEnabled": false
+}

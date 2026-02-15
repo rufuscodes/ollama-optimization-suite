@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ollama.optimized</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/ollama</string>
+        <string>serve</string>
+    </array>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- CPU and Threading -->
+        <key>OLLAMA_NUM_PARALLEL</key>
+        <string>4</string>
+        <key>OLLAMA_MAX_LOADED_MODELS</key>
+        <string>4</string>
+        <key>OLLAMA_NUM_THREAD</key>
+        <string>16</string>
+        
+        <!-- Memory and Queue -->
+        <key>OLLAMA_MAX_QUEUE</key>
+        <string>512</string>
+        <key>OLLAMA_KEEP_ALIVE</key>
+        <string>30m</string>
+        
+        <!-- GPU Acceleration -->
+        <key>OLLAMA_METAL</key>
+        <string>1</string>
+        <key>OLLAMA_MAX_VRAM</key>
+        <string>24</string>
+        
+        <!-- Performance Features -->
+        <key>OLLAMA_FLASH_ATTENTION</key>
+        <string>1</string>
+        
+        <!-- Network -->
+        <key>OLLAMA_HOST</key>
+        <string>127.0.0.1:11434</string>
+        <key>OLLAMA_ORIGINS</key>
+        <string>*</string>
+        
+        <!-- Debugging off for speed -->
+        <key>OLLAMA_DEBUG</key>
+        <string>0</string>
+    </dict>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>StandardOutPath</key>
+    <string>/tmp/ollama.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/tmp/ollama.error.log</string>
+    
+    <key>WorkingDirectory</key>
+    <string>/usr/local/bin</string>
+    
+    <key>ProcessType</key>
+    <string>Interactive</string>
+    
+    <key>Nice</key>
+    <integer>-10</integer>
+</dict>
+</plist>

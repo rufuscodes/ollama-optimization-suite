@@ -1,0 +1,63 @@
+{
+  // VSCode Ollama Extension Settings (Continue.dev or similar)
+  "continue.telemetryEnabled": false,
+  "continue.enableTabAutocomplete": true,
+  
+  // Continue.dev Ollama Configuration
+  "continue.config": {
+    "models": [
+      {
+        "title": "Ollama Local",
+        "provider": "ollama",
+        "model": "codellama:13b",
+        "apiBase": "http://127.0.0.1:11434",
+        "contextLength": 16384,
+        "completionOptions": {
+          "temperature": 0.2,
+          "topP": 0.9,
+          "topK": 40,
+          "numPredict": 1024,
+          "numCtx": 16384,
+          "repeatPenalty": 1.1,
+          "mirostat": 2,
+          "mirostatTau": 5.0,
+          "mirostatEta": 0.1,
+          "numThread": 16,
+          "numGpu": 1
+        }
+      }
+    ],
+    "tabAutocompleteModel": {
+      "title": "Fast Autocomplete",
+      "provider": "ollama",
+      "model": "deepseek-coder:6.7b",
+      "apiBase": "http://127.0.0.1:11434",
+      "completionOptions": {
+        "temperature": 0.1,
+        "numPredict": 256,
+        "numThread": 16
+      }
+    },
+    "embeddingsProvider": {
+      "provider": "ollama",
+      "model": "nomic-embed-text",
+      "apiBase": "http://127.0.0.1:11434"
+    }
+  },
+  
+  // General performance settings
+  "continue.maxTokens": 8192,
+  "continue.requestTimeout": 30000,
+  
+  // Editor performance
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.tabCompletion": "on",
+  "editor.inlineSuggest.enabled": true
+}

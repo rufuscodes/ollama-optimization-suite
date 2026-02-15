@@ -1,0 +1,23 @@
+# Fast CodeLlama Modelfile - Optimized for Speed
+FROM codellama:13b
+
+# System prompt for coding
+SYSTEM You are an expert coding assistant. Provide concise, accurate code solutions.
+
+# Performance-optimized parameters
+PARAMETER num_ctx 16384              # Context window
+PARAMETER num_predict 2048           # Max tokens to generate
+PARAMETER temperature 0.2            # Lower = more deterministic
+PARAMETER top_p 0.9                  # Nucleus sampling
+PARAMETER top_k 40                   # Top-k sampling
+PARAMETER repeat_penalty 1.1         # Prevent repetition
+PARAMETER mirostat 2                 # Enable mirostat sampling for quality
+PARAMETER mirostat_tau 5.0           # Target perplexity
+PARAMETER mirostat_eta 0.1           # Learning rate
+PARAMETER num_thread 16              # Use all CPU threads
+PARAMETER num_gpu 1                  # Use GPU acceleration
+
+# Stop sequences
+PARAMETER stop "<|endoftext|>"
+PARAMETER stop "</s>"
+PARAMETER stop "###"

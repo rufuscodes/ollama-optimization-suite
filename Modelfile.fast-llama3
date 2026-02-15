@@ -1,0 +1,22 @@
+# Fast Llama3 - Optimized for Chat
+FROM llama3:latest
+
+# System prompt for chat
+SYSTEM You are a helpful AI coding assistant. Be concise and accurate.
+
+# Balanced parameters for chat speed and quality
+PARAMETER num_ctx 16384              # Large context for conversations
+PARAMETER num_predict 2048           # Reasonable response length
+PARAMETER temperature 0.3            # Slightly more creative than code
+PARAMETER top_p 0.9                  # Nucleus sampling
+PARAMETER top_k 40                   # Top-k sampling
+PARAMETER repeat_penalty 1.1         # Prevent loops
+PARAMETER mirostat 2                 # Quality sampling
+PARAMETER mirostat_tau 5.0           
+PARAMETER mirostat_eta 0.1
+PARAMETER num_thread 16              # All CPU threads
+PARAMETER num_gpu 1                  # GPU acceleration
+
+# Stop sequences
+PARAMETER stop "<|eot_id|>"
+PARAMETER stop "<|end_of_text|>"

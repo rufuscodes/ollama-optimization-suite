@@ -1,0 +1,58 @@
+{
+  // Windsurf (Codeium) Settings - Optimized for Ollama
+  
+  // Ollama backend configuration
+  "codeium.backend": "ollama",
+  "codeium.ollamaUrl": "http://127.0.0.1:11434",
+  
+  // Model configuration
+  "codeium.model": "codellama:13b",
+  "codeium.chatModel": "llama3:latest",
+  "codeium.completionModel": "deepseek-coder:6.7b",
+  
+  // Performance settings
+  "codeium.enableAutoComplete": true,
+  "codeium.enableInlineCompletion": true,
+  "codeium.enableChat": true,
+  "codeium.maxCompletionLength": 2048,
+  "codeium.completionDelay": 50,
+  "codeium.streaming": true,
+  
+  // Context optimization
+  "codeium.contextLength": 16384,
+  "codeium.maxContextLines": 200,
+  "codeium.includeOpenFiles": true,
+  
+  // Agent mode (Windsurf Cascade)
+  "codeium.cascade.enabled": true,
+  "codeium.cascade.useLocalModels": true,
+  "codeium.cascade.maxSteps": 10,
+  "codeium.cascade.timeout": 60000,
+  
+  // Completion quality vs speed
+  "codeium.temperature": 0.2,
+  "codeium.topP": 0.9,
+  "codeium.topK": 40,
+  
+  // Advanced optimization
+  "codeium.caching.enabled": true,
+  "codeium.caching.ttl": 3600,
+  "codeium.parallel.requests": 4,
+  "codeium.keepAlive": true,
+  
+  // Editor integration
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.tabCompletion": "on",
+  
+  // Performance
+  "codeium.telemetry": false,
+  "codeium.preloadModels": true
+}
