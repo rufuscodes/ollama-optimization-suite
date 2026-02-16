@@ -1,0 +1,51 @@
+[Unit]
+Description=Ollama Optimized Service
+Documentation=https://github.com/ollama/ollama
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ollama
+Group=ollama
+ExecStart=/usr/local/bin/ollama serve
+Restart=always
+RestartSec=3
+
+# Environment Variables for Performance Optimization
+# CPU and Threading
+Environment="OLLAMA_NUM_PARALLEL=4"
+Environment="OLLAMA_MAX_LOADED_MODELS=4"
+Environment="OLLAMA_NUM_THREAD=16"
+
+# Memory and Queue
+Environment="OLLAMA_MAX_QUEUE=512"
+Environment="OLLAMA_KEEP_ALIVE=30m"
+
+# GPU Acceleration (NVIDIA/AMD)
+Environment="OLLAMA_GPU_LAYERS=999"
+
+# Performance Features
+Environment="OLLAMA_FLASH_ATTENTION=1"
+
+# Network
+Environment="OLLAMA_HOST=127.0.0.1:11434"
+Environment="OLLAMA_ORIGINS=*"
+
+# Debugging off for speed
+Environment="OLLAMA_DEBUG=0"
+
+# Logging
+StandardOutput=append:/var/log/ollama/ollama.log
+StandardError=append:/var/log/ollama/ollama.error.log
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Performance
+Nice=-10
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

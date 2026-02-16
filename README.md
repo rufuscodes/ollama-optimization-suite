@@ -1,6 +1,10 @@
 # 🚀 Ollama Performance Optimization Suite
 
-Complete optimization setup for blazing-fast Ollama models on your Mac (8-core/16-thread, 32GB RAM).
+Complete optimization setup for blazing-fast Ollama models on macOS and Ubuntu/Linux.
+
+> **📦 Multi-Platform Support**: This suite now supports both **macOS** and **Ubuntu/Linux**!  
+> - **macOS users**: Follow the instructions below  
+> - **Ubuntu/Linux users**: See [`ubuntu/README_UBUNTU.md`](ubuntu/README_UBUNTU.md)
 
 ## 🎯 What's Included
 
